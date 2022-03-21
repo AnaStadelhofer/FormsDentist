@@ -29,6 +29,7 @@ namespace Telas
         TextBox txtRegistro;
         TextBox txtSalario;
         TextBox txtEspecialidadeId;
+        ListView listView;
  
         public UpdateDentistaTela()
         {
@@ -61,10 +62,24 @@ namespace Telas
             this.Senha = new Campos.LabelFieldTam("Senha:", 250, 280, 150, 30);
             this.txtSenha = new Campos.TextBoxField(250, 310, 180, 20);
 
+            listView = new Campos.FieldListView(50, 350, 380, 80);
+			listView.View = View.Details;
+			ListViewItem EspecialidadeUm = new ListViewItem("1");
+			EspecialidadeUm.SubItems.Add("Limpar sala e dente do paciente");
+			EspecialidadeUm.SubItems.Add("Limpar sala");
+			listView.Items.AddRange(new ListViewItem[]{EspecialidadeUm});
+			listView.Columns.Add("Id", -2, HorizontalAlignment.Left);
+    		listView.Columns.Add("Descrição", -2, HorizontalAlignment.Left);
+			listView.Columns.Add("Tarefas", -2, HorizontalAlignment.Left);
+			listView.FullRowSelect = true;
+			listView.GridLines = true;
+			listView.AllowColumnReorder = true;
+			listView.Sorting = SortOrder.Ascending;
+
             btnVoltar = new Campos.ButtonField("Voltar", 50, 450, 100, 30);
 			btnVoltar.Click += new EventHandler(this.btnVoltarClick);
 
-            btnSalvar = new Campos.ButtonField("Salvar", 350, 450, 100, 30);
+            btnSalvar = new Campos.ButtonField("Salvar", 330, 450, 100, 30);
 			btnSalvar.Click += new EventHandler(this.btnSalvarClick);
 
             this.Controls.Add(this.lblUser);
@@ -88,6 +103,7 @@ namespace Telas
             this.Controls.Add(this.txtSalario);
             this.Controls.Add(this.EspecialidadeId);
             this.Controls.Add(this.txtEspecialidadeId);
+            this.Controls.Add(this.listView);
 
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

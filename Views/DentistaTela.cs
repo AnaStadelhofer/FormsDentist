@@ -88,11 +88,7 @@ namespace Telas
             result = MessageBox.Show(message, caption, buttons);
             if (result == System.Windows.Forms.DialogResult.Yes)
             {
-                this.Close();
-            } 
-            else
-            {
-                //this.Close(); 
+                MessageBox.Show("Dentista excluido com sucesso!", "Exclusão");
             }
         }  
 
