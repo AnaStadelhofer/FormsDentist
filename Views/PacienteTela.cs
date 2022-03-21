@@ -27,7 +27,7 @@ namespace Telas
 			btnDelete.Click += new EventHandler(this.btnDeleteClick);
 
             btnUpdate = new Campos.ButtonField("Atualizar", 250, 400, 100, 30);
-			//btnConfirmar.Click += new EventHandler(this.btnLogarClick);
+			btnUpdate.Click += new EventHandler(this.btnUpdateClick);
 
             btnInsert = new Campos.ButtonField("Inserir", 350, 400, 100, 30);
 			//btnConfirmar.Click += new EventHandler(this.btnLogarClick);
@@ -70,7 +70,13 @@ namespace Telas
         public void btnVoltarClick(object sender, EventArgs e)
         {
             this.Close();
-        }  
+        }
+          
+        public void btnUpdateClick(object sender, EventArgs e)
+        {
+            UpdatePacienteTela UpdatePacienteTelas = new UpdatePacienteTela();
+            UpdatePacienteTelas.ShowDialog();
+        } 
 
         public void btnDeleteClick(object sender, EventArgs e)
         {
