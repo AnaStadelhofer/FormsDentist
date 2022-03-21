@@ -7,13 +7,11 @@ namespace Telas
     public class EspacialidadeTela : Form
     {
         private System.ComponentModel.IContainer components = null;
-
         Label lblUser;
         Button btnDelete;
         Button btnUpdate;
         Button btnInsert;
         Button btnVoltar;
-
         ListView listView;
         public EspacialidadeTela()
         {
