@@ -30,7 +30,7 @@ namespace Telas
 			btnUpdate.Click += new EventHandler(this.btnUpdateClick);
 
             btnInsert = new Campos.ButtonField("Inserir", 350, 400, 100, 30);
-			//btnConfirmar.Click += new EventHandler(this.btnLogarClick);
+			btnInsert.Click += new EventHandler(this.btnInsertClick);
 
             listView = new Campos.FieldListView(50, 50, 400, 320);
 			listView.View = View.Details;
@@ -76,6 +76,11 @@ namespace Telas
         {
             UpdatePacienteTela UpdatePacienteTelas = new UpdatePacienteTela();
             UpdatePacienteTelas.ShowDialog();
+        } 
+        public void btnInsertClick(object sender, EventArgs e)
+        {
+            InsertPacienteTela InsertPacienteTelas = new InsertPacienteTela();
+            InsertPacienteTelas.ShowDialog();
         } 
 
         public void btnDeleteClick(object sender, EventArgs e)
