@@ -91,6 +91,5 @@ namespace Telas
                 MessageBox.Show("Paciente excluido com sucesso!", "Exclusão");
             }
         }  
-
     }
 }
